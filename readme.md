@@ -1,12 +1,12 @@
 # ptt_beauty_spider_python
 
-[zhaoolee/ptt_beauty_spider](https://github.com/zhaoolee/ptt_beauty_spider) 的 `python` 版本，结果上来说，在我的计算机上运行是和期待结果一致的，非常感谢 [原作者](https://github.com/zhaoolee) 的代码❤。我是完全不懂网站的接口相关的东西。
+[zhaoolee/ptt_beauty_spider](https://github.com/zhaoolee/ptt_beauty_spider) 的 `python` 版本，结果上来说，在我的计算机上运行是和期待结果一致的，非常感谢 [原作者](https://github.com/zhaoolee) 的代码❤。我完全不懂与网站接口有关的东西。
 
 ## 😪 你是不是闲的没事，为啥要做这个
 
-我确实是闲的没事😂，偶然在 [W006《资源》为台湾「表特日报」完成的小姐姐爬虫（附4000张成果图片） - V2方圆](https://www.v2fy.com/p/dgithubjikemijijikemiji-mdwebsite-000007-music-3/) 看到这个项目后，我发现爬虫好像挺有意思，详细问题见 [该 issue 链接](https://github.com/zhaoolee/ptt_beauty_spider/issues/1)，我和我的电脑配合的并不是很好，`Powershell` 似乎有自己的想法，[原作者](https://github.com/zhaoolee) 的 `nodejs` 代码跑了一下，只能看到 `==停止==`，也没有结果反复运行也没有结果就直接结束了，这就奇了怪了，然后我就想参考作者的思路，用 `python` 来重写一下，看看能不能运行，结果上来说可以正常运行和下载图片。
+有一说一，我确实是闲的没事😂，偶然在 [W006《资源》为台湾「表特日报」完成的小姐姐爬虫（附4000张成果图片） - V2方圆](https://www.v2fy.com/p/dgithubjikemijijikemiji-mdwebsite-000007-music-3/) 看到这个项目后，我发现爬虫好像挺有意思，详细问题见 [该 issue 链接](https://github.com/zhaoolee/ptt_beauty_spider/issues/1)，我和我的电脑配合的并不是很好，`Powershell` 似乎有自己的想法，[原作者](https://github.com/zhaoolee) 的 `nodejs` 代码跑了一下，只能看到 `==停止==`，也没有结果反复运行也没有结果就直接结束了，这就奇了怪了，然后我就想参考作者的思路，用 `python` 来重写一下，看看能不能运行，结果上来说可以正常运行和下载图片。
 
-另外推荐一下原作者的网站 [V2方圆](https://www.v2fy.com/)，作者推荐了许多优质的 `Chrome` 插件，我的浏览器中装的所有插件都是搁那看的，非常有用，此外作者还推荐了很多网站（包括福利）🤤
+**另外推荐一下原作者的网站 [V2方圆](https://www.v2fy.com/)，作者推荐了许多优质的 `Chrome` 浏览器插件，我的 `Chrome` 里面装的所有插件都是那里推荐的（没错，是所有插件），特别好用，此外作者还推荐了很多网站（包括福利）🤤和资源。**
 
 ## 🤮 你这个破代码怎么写的这么烂呢，一点优化也没有呢
 
@@ -33,7 +33,7 @@ venv
 $ source ./venv/bin/activate
 ```
 
-Windows 系统大致相同，激活虚拟环境的脚本为
+Windows 系统激活虚拟环境的脚本是
 
 ```powershell
 # Windows
