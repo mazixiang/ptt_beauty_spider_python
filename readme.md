@@ -40,15 +40,10 @@ Windows 系统激活虚拟环境的脚本是
 > .\venv\Scripts\activate
 ```
 
-安装代码中需要用到的几个包（pip 下载慢请自行查找 pip 切换源的方法）
+安装依赖包
 
 ```bash
-# python 中的 jQuery，原作者 nodejs 依赖中的 cheerio
-(venv) $ pip install pyquery
-# （可选）控制台可视化
-(venv) $ pip install rich
-# 发送请求的包
-(venv) $ pip install requests
+(venv) $ pip install -r requirements.txt
 ```
 
 最后运行 `main.py`
@@ -59,10 +54,4 @@ Windows 系统激活虚拟环境的脚本是
 
 ## 👀 有什么需要注意的地方么
 
-这个代码在我的电脑上能跑，但不是在所有人电脑上都能跑，如有问题请 [留下 issue](https://github.com/mazixiang/ptt_beauty_spider_python/issues/new/choose)，说明具体情况。我目前是个学生，不是很忙，如果可以我会尽力帮助。
-
-`rich` 包是让控制台看起来更舒服的，如果不安装，请将代码中的 `console=Console()` 一行删除，并将所有的 `console.log` 删除或者改为 `print`
-
-请自行设置终端代理，大陆的网络无法下载 `imgur` 上的内容。
-
-明日方舟的危机合约活动出了，要改进的话等活动结束吧。
+这个代码在我的电脑上能跑，但不是在所有人电脑上都能跑，如有问题请 [留下 issue](https://github.com/mazixiang/ptt_beauty_spider_python/issues/new/choose)，说明具体情况。如果可以我会尽力帮助。

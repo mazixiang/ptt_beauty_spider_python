@@ -85,7 +85,25 @@ def download_image(img_name, img_url):
     return 0
 
 
-def main():
+def format_image_name(name):
+    """
+    由于有少数图片的文件名包含特殊字符，编写此函数来格式化文件格式
+    :param name: 需要格式化的名称
+    :return: 格式化后的名称
+    """
+    name = name.replace('/', '')
+    name = name.replace('\\', '')
+    name = name.replace(':', '')
+    name = name.replace('*', '')
+    name = name.replace('?', '')
+    name = name.replace('"', '')
+    name = name.replace('<', '')
+    name = name.replace('>', '')
+    name = name.replace('|', '')
+    return name
+
+
+def main(request_total_downloads=1000):
     """
     主函数
     :return: 状态码，0代表成功
@@ -102,12 +120,14 @@ def main():
     total_downloads = 0
     # 等待的时间，默认为 10 秒
     wait_time = 10
+    request_wait_time = 5
 
     while next_download:
         # 生成暂时的的 url
         tmp_url = page_number_to_url(current_page_number)
         console.log(f'请求的 url: {tmp_url}')
         tmp_html = url_to_html(tmp_url)
+        has_download = False
 
         if len(tmp_html) < 1:
             next_download = False
@@ -116,13 +136,23 @@ def main():
             # 得到目标下载图片的数组
             img_json = html_to_json(tmp_html)
             for img in img_json:
+                img['name'] = format_image_name(img['name'])
                 if download_image(img['name'], img['url']) == 0:
                     total_downloads = total_downloads + 1
+                    if not has_download:
+                        has_download = True
                     # 休息一定时间，减轻服务器负荷
                     console.log(f'等待 {wait_time} 秒')
                     time.sleep(wait_time)
+        if not has_download:
+            console.log(f'页面请求 等待 {request_wait_time} 秒')
+            time.sleep(request_wait_time)
 
         current_page_number = current_page_number + 1
+
+        # 爬取 1000 张图片后，退出
+        if total_downloads >= request_total_downloads:
+            break
 
     console.log(f'== 抓取完成，共抓取了 {total_downloads} 张图片 ==')
     return 0
